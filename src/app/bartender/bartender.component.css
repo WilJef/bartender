@@ -1,0 +1,16 @@
+body,
+body .p-component
+{
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background-color: #F7F6F3;
+}
+
+.label-field-mandatory{
+    color: red;
+}
+
+.label-field-text{
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+}

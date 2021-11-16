@@ -1,0 +1,60 @@
+<div>
+    <p-fieldset legend="Bartender App">
+        <div class="p-col-12 p-md-12">
+            <p-messages [(value)]="msg"></p-messages>
+        </div>
+        <div class="p-grid">
+            <div class="p-col-2">
+                <label class="label-field-mandatory">*</label>
+                <label class="label-field-text">Número de iteraciones: </label>
+            </div>
+            <div class="p-col-10">
+                <input type="number" pInputTex [(ngModel)]="numeroIteraciones" [maxlength]="iteracionesMaximaLongitud"
+                    pattern="^[1-9][0-9]*$" [max]="iteracionesMaximoValor" [min]="iteracionesMinimoValor"
+                    required="true" class="ng-invalid ng-dirty" (change)="onChangeIteraciones()" />
+                <div *ngIf="numeroIteraciones === 0 || !numeroIteraciones ">
+                    <p-message severity="error" text="El minimo valor es {{ iteracionesMinimoValor }} "></p-message>
+                </div>
+            </div>
+
+        </div>
+        <div class="p-grid">
+            <div class="p-col-2">
+                <label class="label-field-mandatory">*</label>
+                <label class="label-field-text">Id de la pila de trabajo: </label>
+            </div>
+            <div class="p-col-2">
+                <input type="number" pInputTex [(ngModel)]="idPilaTrabajo" [maxlength]="iteracionesMaximaLongitud"
+                    pattern="^[1-9][0-9]*$" [max]="iteracionesMaximoValor" [min]="iteracionesMinimoValor"
+                    required="true" (change)="consultarPilaTrabajo()" />
+                <div *ngIf="idPilaTrabajo === 0 || !idPilaTrabajo">
+                    <p-message severity="error" text="El minimo valor es {{ iteracionesMinimoValor }} "></p-message>
+                </div>
+            </div>
+            <div class="p-col-4">
+                <div class="p-grid">
+                <div class="p-col-6">
+                    <p class=" label-field-text">Pila de trabajo seleccionada: </p>
+                </div>
+                <div class="p-col-2">
+                    <p>{{pila}}</p>
+                </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="p-grid">
+            <div class="p-col-2">
+                <p class=" label-field-text">Respuesta: </p>
+            </div>
+            <div class="p-col-2">
+                <p>{{respuesta}}</p>
+            </div>
+        </div>
+
+        <div class="p-grid p-justify-center" style="text-align: center; margin-top: 5px;">
+            <p-button label="Procesar pila" [disabled]="!validado" (onClick)="procesarPilaTrabajo()"></p-button>
+        </div>
+    </p-fieldset>
+</div>
