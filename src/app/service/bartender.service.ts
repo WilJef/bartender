@@ -16,7 +16,7 @@ export class BartenderService extends GeneralService {
 
   public lista(idPila?) : Observable<any>
   {
-    console.log("lista ", idPila);
+    
     let urlConsumo = GeneralService.ENDPOINT_LISTA_PILA_TRABAJO;
     if(idPila != null){
       urlConsumo = urlConsumo + "/" + idPila
@@ -29,7 +29,7 @@ export class BartenderService extends GeneralService {
 
   public procesarLista(numeroIteraciones, idPilaTrabajo) : Observable<any>
   {
-    console.log("provesarlista ", numeroIteraciones, idPilaTrabajo);
+    
     let urlConsumo = GeneralService.ENDPOINT_PROCESAR_PILA + "/" + idPilaTrabajo + "/" + numeroIteraciones;
     console.log("urlConsumo procesarLista: ", urlConsumo);
     const options = { headers: this.obtenerHeader() };
