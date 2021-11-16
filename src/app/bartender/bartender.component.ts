@@ -59,7 +59,7 @@ export class BartenderComponent implements OnInit {
           this.validado = this.numeroIteraciones > 0;
         }, err => {
           console.log(err);
-          this.pila = err.error.mensaje; 
+          this.pila = null; 
           this.succesMessage(this.pila,"info");          
         });
       }, 10); 
