@@ -60,7 +60,7 @@ export class BartenderComponent implements OnInit {
         }, err => {
           console.log(err);
           this.pila = null; 
-          this.succesMessage(this.pila,"info");          
+          this.succesMessage(err.error.mensaje,"info");          
         });
       }, 10); 
   }
